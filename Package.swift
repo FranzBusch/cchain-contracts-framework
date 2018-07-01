@@ -21,6 +21,6 @@ let package = Package(
             dependencies: ["Vapor", "JWT", "CryptoSwift"]),
         .testTarget(
             name: "cchain-contracts-frameworkTests",
-            dependencies: ["cchain-contracts-framework"]),
+            dependencies: ["CChainContracts"]),
     ]
 )
