@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "cchain-contracts-framework",
+    name: "CChain",
     products: [
         .library(
             name: "cchain-contracts-framework",
