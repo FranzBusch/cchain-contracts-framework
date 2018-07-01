@@ -9,7 +9,7 @@ import Foundation
 
 open class RequestDocument: Codable {
 
-    open init() {
+    public init() {
 
     }
 
@@ -17,7 +17,7 @@ open class RequestDocument: Codable {
 
 open class ResponseDocument: Encodable {
 
-    open init() {
+    public init() {
 
     }
 
