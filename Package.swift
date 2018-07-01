@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CChain",
+    name: "CChainContracts",
     products: [
         .library(
-            name: "cchain-contracts-framework",
-            targets: ["cchain-contracts-framework"]),
+            name: "CChainContracts",
+            targets: ["CChainContracts"]),
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "cchain-contracts-framework",
+            name: "CChainContracts",
             dependencies: ["Vapor", "JWT", "CryptoSwift"]),
         .testTarget(
             name: "cchain-contracts-frameworkTests",
