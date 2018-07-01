@@ -7,6 +7,6 @@
 
 import Foundation
 
-public class RequestDocument: Codable {}
+open class RequestDocument: Codable {}
 
-public class ResponseDocument: Encodable {}
+open class ResponseDocument: Encodable {}
