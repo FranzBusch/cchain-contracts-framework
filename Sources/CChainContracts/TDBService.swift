@@ -21,7 +21,7 @@ public class TDBService {
         self.loginRequest = loginRequest
     }
 
-    func fetchTransactions(with query: TransactionSearchQuery, on container: Container) throws -> Future<[Transaction]> {
+    public func fetchTransactions(with query: TransactionSearchQuery, on container: Container) throws -> Future<[Transaction]> {
         let client = try container.client()
 
         return try loginIfNecessary(on: container).flatMap { loginResponse in
@@ -36,7 +36,7 @@ public class TDBService {
 
     }
 
-    func createTransaction(_ transaction: TransactionCreate, on container: Container) throws -> Future<Transaction> {
+    public func createTransaction(_ transaction: TransactionCreate, on container: Container) throws -> Future<Transaction> {
         let client = try container.client()
 
         return try loginIfNecessary(on: container).flatMap { loginResponse in
@@ -50,7 +50,7 @@ public class TDBService {
         }
     }
 
-    func fetchChains(on container: Container) throws -> Future<[Chain]> {
+    public func fetchChains(on container: Container) throws -> Future<[Chain]> {
         let client = try container.client()
 
         return try loginIfNecessary(on: container).flatMap { loginResponse in
@@ -62,7 +62,7 @@ public class TDBService {
         }
     }
 
-    func createChain(_ chain: Chain, on container: Container) throws -> Future<Chain> {
+    public func createChain(_ chain: Chain, on container: Container) throws -> Future<Chain> {
         let client = try container.client()
 
         return try loginIfNecessary(on: container).flatMap { loginResponse in
@@ -76,7 +76,7 @@ public class TDBService {
         }
     }
 
-    func fetchOrCreateChain(named name: String, on container: Container) throws -> Future<Chain> {
+    public func fetchOrCreateChain(named name: String, on container: Container) throws -> Future<Chain> {
         return try fetchChains(on: container).flatMap(to: Chain.self) { chains in
             guard let chain = chains.first(where: { $0.name == name }) else {
                 let carChain = Chain(name: name, description: name)
